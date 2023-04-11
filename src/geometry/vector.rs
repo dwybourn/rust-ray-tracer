@@ -1,5 +1,4 @@
-use crate::types::tuple::Tuple;
-use crate::types::Point;
+use crate::geometry::{Point, Tuple};
 use std::fmt::{Display, Formatter};
 use std::ops::{Add, BitXor, Div, Mul, Neg, Sub};
 
@@ -11,11 +10,11 @@ pub struct Vector {
 }
 
 impl Vector {
-    fn magnitude(&self) -> f64 {
+    pub fn magnitude(&self) -> f64 {
         (self.x.powi(2) + self.y.powi(2) + self.z.powi(2)).sqrt()
     }
 
-    fn normalise(&self) -> Vector {
+    pub fn normalise(&self) -> Vector {
         *self / self.magnitude()
     }
 }
@@ -138,7 +137,7 @@ impl Mul for Vector {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::types::{Point, Vector};
+    use crate::geometry::Point;
 
     #[test]
     fn test_adding_two_vectors_should_equal_a_new_vector() {

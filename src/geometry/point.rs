@@ -1,4 +1,4 @@
-use crate::types::{Tuple, Vector};
+use crate::geometry::{Tuple, Vector};
 use std::fmt::{Display, Formatter};
 use std::ops::{Add, Neg, Sub};
 
@@ -85,7 +85,7 @@ impl Neg for Point {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::types::Vector;
+    use crate::geometry::Vector;
 
     #[test]
     fn test_adding_a_vector_to_a_point() {
