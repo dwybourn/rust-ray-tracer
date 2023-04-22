@@ -1,3 +1,5 @@
+pub mod matrix;
+
 pub mod geometry {
     mod point;
     mod tuple;
@@ -19,3 +21,5 @@ pub mod scene {
     pub use environment::Environment;
     pub use projectile::Projectile;
 }
+
+extern crate nalgebra;
